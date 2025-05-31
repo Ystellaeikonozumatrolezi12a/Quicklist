@@ -31,7 +31,7 @@ function showItemsList() {
                 </div>
                 <label for="item-${index}" onclick="checkItem('${item.name}')">${item.name}</label>
             </div>
-            <button>
+            <button onclick="removeItem('${item.name}')">
                 <img src="./assets/trash-icon.svg" alt="trash icon">
             </button>
         </div>
@@ -43,4 +43,14 @@ function checkItem(itemName) {
     const item = items.find((item) => item.name === itemName)
     item.checked = !item.checked
     showItemsList()
+}
+
+function removeItem(itemName) {
+    const itemIndex = items.findIndex((item) => item.name === itemName)
+
+    if(itemIndex !== -1) {
+        items.splice(itemIndex, 1)
+    }
+
+    showItemsList ()
 }
