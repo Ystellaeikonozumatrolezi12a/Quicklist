@@ -16,7 +16,7 @@ function addItem() {
     items.push(item)
 
     document.querySelector("#item").value = ""
-     showItemsList()
+    showItemsList()
 }
 
 function showItemsList() {
@@ -43,7 +43,7 @@ function showItemsList() {
         `
     })
 
-    localStorage.setItem("Items", JSON.stringify(items))
+    localStorage.setItem("items", JSON.stringify(items))
 }
 
 function checkItem(itemName) {
@@ -66,10 +66,10 @@ function removeItem(itemName) {
         items.splice(itemIndex, 1)
     }
 
-    showItemsList ()
+    showItemsList()
 }
 
-function addHideWarningClass () {
+function addHideWarningClass() {
 document.querySelector(".warning").classList.add("hide-warning")
 }
 
@@ -77,9 +77,9 @@ function verifyLocalStorageItems() {
     const localStorageItems = localStorage.getItem("items")
 
     if (localStorageItems) {
-    items = JSON.parse(localStorageItems)
-    showItemsList()
+        items = JSON.parse(localStorageItems)
+        showItemsList()
     }
 }
 
-verifyLocalStorageItems () 
+verifyLocalStorageItems()
